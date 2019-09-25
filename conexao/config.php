@@ -1,9 +1,9 @@
 <?php
 	
-	define('DB_NAME','biblioteca_producao');
-	define('DB_HOST', '127.0.0.1');
-	define('DB_PASS','');
-	define('DB_USER','root');
+	define('DB_NAME','GafnNYRp96');
+	define('DB_HOST', 'remotemysql.com');
+	define('DB_PASS','XvuVfDgyeJ');
+	define('DB_USER','GafnNYRp96');
 
 ?>
 
