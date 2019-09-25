@@ -5,5 +5,5 @@
     include '../../control/UserControl.php';
     $userControl = new UserControl();
 
-    echo '{' + json_encode($userControl->findAll()) + '}';
+    echo '{' . json_encode($userControl->findAll()) . '}';
 ?>
