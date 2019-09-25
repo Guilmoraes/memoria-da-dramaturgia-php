@@ -20,6 +20,7 @@ class UserControl{
 	function findAll(){
 		header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
 		header('Access-Control-Allow-Credentials: true');
+		header('Content-Type: application/json');
 		$user = new User();
 		return $user->findAll();
 	}
