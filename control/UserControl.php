@@ -3,27 +3,23 @@ include '../../model/User.php';
 
 class UserControl{
 	function insert($obj){
+		header("Access-Control-Allow-Origin: *");
+		header("Access-Control-Allow-Headers: Content-Type");
 		$user = new User();
-		//echo $obj->titulo;
 		return $user->insert($obj);
 		header('Location:listar.php');
 	}
 
 	function update($obj,$id){
+		header("Access-Control-Allow-Origin: *");
+		header("Access-Control-Allow-Headers: Content-Type");
 		$user = new User();
 		return $user->update($obj,$id);
 	}
 
-	function delete($obj,$id){
-		$user = new User();
-		return $user->delete($obj,$id);
-	}
-
-	function find($id = null){
-
-	}
-
 	function findAll(){
+		header("Access-Control-Allow-Origin: *");
+		header("Access-Control-Allow-Headers: Content-Type");
 		$user = new User();
 		return $user->findAll();
 	}

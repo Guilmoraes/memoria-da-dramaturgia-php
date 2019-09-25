@@ -3,27 +3,23 @@ include '../../model/Company.php';
 
 class CompanyControl{
 	function insert($obj){
+		header("Access-Control-Allow-Origin: *");
+		header("Access-Control-Allow-Headers: Content-Type");
 		$company = new Company();
-		//echo $obj->titulo;
 		return $company->insert($obj);
 		header('Location:listar.php');
 	}
 
 	function update($obj,$id){
+		header("Access-Control-Allow-Origin: *");
+		header("Access-Control-Allow-Headers: Content-Type");
 		$company = new Company();
 		return $company->update($obj,$id);
 	}
 
-	function delete($obj,$id){
-		$company = new Company();
-		return $company->delete($obj,$id);
-	}
-
-	function find($id = null){
-
-	}
-
 	function findAll(){
+		header("Access-Control-Allow-Origin: *");
+		header("Access-Control-Allow-Headers: Content-Type");
 		$company = new Company();
 		return $company->findAll();
 	}
