@@ -17,6 +17,11 @@ class UserControl{
 		$user = new User();
 		return $user->findAll();
 	}
+
+	function login($obj){
+		$user = new User();
+		return $user->login($obj);
+	}
 }
 
 ?>

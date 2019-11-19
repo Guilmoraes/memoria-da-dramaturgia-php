@@ -31,6 +31,24 @@ class User extends Conexao{
     	return $consulta->execute();
 	}
 
+	public function login($obj){
+		$sql = "SELECT users.id as u_id, users.name as u_name, users.email as u_email, users.password as u_password, authority.id as a_id, authority.name as a_name FROM users INNER JOIN authority ON authority.id = users.id_authority WHERE users.email = '". $obj->email ."' AND users.password = '".$obj->password."'";
+		$consulta = Conexao::prepare($sql);
+		$consulta->execute();
+		$row = $consulta->fetch(PDO::FETCH_BOTH);
+		$user = new UserObject();
+		$user->id        = $row['u_id'];
+		$user->name      = $row['u_name'];
+		$user->email     = $row['u_email'];
+		$user->password  = $row['u_password'];
+		$authority       = new AuthorityObject();
+		$authority->id   = $row['a_id'];
+		$authority->name = $row['a_name'];
+		$user->authority = $authority;
+			
+		return $user;
+	}
+
 	public function update($obj,$id = null){
 		$sql = "UPDATE users SET name = :name, email = :email, password = :password, id_authority = :id_authority WHERE id = :id ";
 		$consulta = Conexao::prepare($sql);
