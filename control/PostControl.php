@@ -13,9 +13,9 @@ class PostControl{
 		return $category->update($obj,$id);
 	}
 
-	function findAll(){
+	function findAll($obj){
 		$category = new Post();
-		return $category->findAll();
+		return $category->findAll($obj);
 	}
 }
 

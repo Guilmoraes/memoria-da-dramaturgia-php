@@ -15,7 +15,10 @@
     }
     include '../../control/PostControl.php';
     $postControl = new PostControl();
+    
+    $data = file_get_contents('php://input');
+    $obj =  json_decode($data);
 
-    echo json_encode($postControl->findAll(), JSON_UNESCAPED_UNICODE)
+    echo json_encode($postControl->findAll($obj), JSON_UNESCAPED_UNICODE)
     
 ?>
