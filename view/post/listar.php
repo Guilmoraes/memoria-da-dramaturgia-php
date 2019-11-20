@@ -14,11 +14,10 @@
             header("Access-Control-Allow-Headers: {$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
     }
     include '../../control/PostControl.php';
-    $postControl = new PostControl();
-    
     $data = file_get_contents('php://input');
     $obj =  json_decode($data);
 
+    $postControl = new PostControl();
     echo json_encode($postControl->findAll($obj), JSON_UNESCAPED_UNICODE)
     
 ?>

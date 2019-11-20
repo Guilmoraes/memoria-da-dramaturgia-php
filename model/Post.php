@@ -83,8 +83,8 @@ class Post extends Conexao{
 
 	public function findAll($obj){
 		$sql = "SELECT post.id as p_id, post.title as p_title, post.description as p_description, category.id as c_id, category.name as c_name, category.color as c_color, company.id as co_id, company.name as co_name FROM post INNER JOIN category ON category.id = post.id_category INNER JOIN company ON company.id = post.id_company";
-		if($obj.id != null) {
-			$sql = $sql . ' where company.id = '. $obj.id;
+		if($obj !== null && $obj->id !== null) {
+			$sql = $sql . ' where company.id = '. $obj->id;
 		}
 		$sqlAnswer = "SELECT answer.id as a_id, 
 		answer.answer as a_answer,
